@@ -138,20 +138,59 @@ class RCDCest
     /**
      * Fill out the Preschool Application Form
      */
-    public function fillPreSchoolApplication(AcceptanceTester $I){
-        $I->amOnPage('/pre-school-application');
+    public function fillFinancialAssistanceApplication(AcceptanceTester $I){
+        $I->amOnPage('/financial-assistance-application');
         $I->amGoingTo('fill out the fields of the PreSchool Application Form');
 
         //fill Child's name field(First,Middle,Last)
         $I->fillField('input_1.3','Sir');//fill first name field
-        $I->fillField('input_1.4','J');//fill Middle name field
         $I->fillField('input_1.6','James-Arthur');//fill last name field
 
         //fill Date of birth field
         $I->fillField('input_2','05/22/2007');
 
         //toggle Gender 'Male' radio button
-        $I->selectOption('input_3');
+       // $I->selectOption('input_3',);
+
+       //fill out physical residence
+       $I->fillField('input_4','Buckingham Palace');
+
+       //fill out current/past preschool/childcare programs
+       $I->fillField('input_6', 'n/a');
+
+       //fill out parent/guardian information
+       $I->fillField('input_13.3', 'Elizabeth');//first name
+       $I->fillField('input_13.6', 'II');//last name
+       $I->fillField('input_15', 'Queen');//relationship
+
+       //fill out date of birth
+       $I->fillField('input_16', '04/15/1920');
+       
+       //check lives with child radio button
+
+
+       //fill out employer field
+       $I->fillField('input_29', 'British Government');
+
+       //fill out total hours per week
+       $I->fillField('input_30', '90');
+
+       //fill out home phone field
+       $I->fillField('input_32', '8142208917');
+
+       //fill out email field
+       $I->fillField('input_33', 'brexit@gmail.com');
+
+       //child insurance radio button
+
+       //child insurance checkboxes
+       $I->checkOption('input_36.3');
+
+       //fill date of child's last physical
+       $I->fillField('input_37', '04/15/2009');
+
+       //fill date of last dentist visit
+       $I->fillField('input_38', '04/15/2009');
     }
 
     /* 
