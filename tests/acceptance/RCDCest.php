@@ -131,7 +131,7 @@ class RCDCest
         $I->click('//*[@id="Delivery-Grant-FormButton"]');
 
         //click Mixed Delivery Cover Letter Button
-        $I->click('//*[@id="Cover_Letter_Form_Button"]');
+       // $I->click('//*[@id="Cover_Letter_Form_Button"]');
 
     }
     
@@ -142,75 +142,96 @@ class RCDCest
         $I->amOnPage('/financial-assistance-application');
         $I->amGoingTo('fill out the fields of the PreSchool Application Form');
 
-        //fill Child's name field(First,Middle,Last)
-        $I->fillField('input_1.3','Sir');//fill first name field
-        $I->fillField('input_1.6','James-Arthur');//fill last name field
+        //Child's Name
+        $I->fillField('input_1.3','Edmund');
+        $I->fillField('input_1.6','Bond');
 
-        //fill Date of birth field
-        $I->fillField('input_2','05/22/2007');
+        //Dateof birth
+        $I->fillField('input_2','02/14/2000');
 
-        //toggle Gender 'Male' radio button
-       // $I->selectOption('input_3',);
+        //Sex
+        $I->selectOption('input_3','Male');
 
-       //fill out physical residence
-       $I->fillField('input_4','Buckingham Palace');
+        //Physical Residence
+        $I->fillField('input_4','800 New River Drive');
 
-       //fill out current/past preschool/childcare programs
-       $I->fillField('input_6', 'n/a');
+        //ParentGuardian Info
+        $I->fillField('input_13.3','Hannah');//first name
+        $I->fillField('input_13.6','Montana');//last name
+        $I->fillField('input_16','02/14/1970');//DATE of birth
 
-       //fill out parent/guardian information
-       $I->fillField('input_13.3', 'Elizabeth');//first name
-       $I->fillField('input_13.6', 'II');//last name
-       $I->fillField('input_15', 'Queen');//relationship
+        $I->selectOption('input_17','Yes');//lives with child
 
-       //fill out date of birth
-       $I->fillField('input_16', '04/15/1920');
-       
-       //check lives with child radio button
+        $I->fillField('input_18','Radford Child Development Inc.');//Employer
+
+        $I->fillField('input_19', '60');//Total hours per week
+
+        $I->fillField('input_20','4049993490');//Work phone#
+        $I->fillField('input_21','7032238907');//Home phone#
+
+        $I->fillField('input_22','edmund_amankwah@yahoo.com');//email
+
+        $I->selectOption('input_35','No');//Child Insurance check
+
+        $I->fillField('input_37','01/23/2022');//Last Physical
+        $I->fillField('input_38','01/20/2022');//Last Dentist visit
+
+        //Program Selection
+        //First choice
+        $I->selectOption('input_42','Radford City Public Schools Virginia Preschool Initiative (VPI)');
+
+        //second Choice
+        $I->selectOption('input_96','Head Start full day school day located at McHarg Elem School for 4-year olds');
+
+        $I->selectOption('input_53.1','1');//Photograph consent
+        $I->fillField('input_54','02/08/2022');//Date
 
 
-       //fill out employer field
-       $I->fillField('input_29', 'British Government');
+        //Additional Family Information
+        //Special Needs Awareness
+        $I->selectOption('input_60.3','Hearing Impairment');//Hearing Impairment
+        $I->selectOption('input_61.1','Speech /Language Disorders');//Speech/language Disorder
+        $I->selectOption('input_62.2','Visual Impairment');//Visual Impairment
 
-       //fill out total hours per week
-       $I->fillField('input_30', '90');
+        //Covid Impact
+        $I->selectOption('input_68','Yes');//Family Impacted BY Covid
+        $I->fillField('input_69','Long term hospital care');
 
-       //fill out home phone field
-       $I->fillField('input_32', '8142208917');
+        //Does Child recieve special education services?
+        $I->selectOption('input_71','No');
 
-       //fill out email field
-       $I->fillField('input_33', 'brexit@gmail.com');
+        //Does child have any chronic health conditions
+        $I->selectOption('input_73','No');
 
-       //child insurance radio button
+        //Foster Child?
+        $I->selectOption('input_76','No');
 
-       //child insurance checkboxes
-       $I->checkOption('input_36.3');
+        //Primary Language in Household
+        $I->selectOption('input_77','English');
 
-       //fill date of child's last physical
-       $I->fillField('input_37', '04/15/2009');
+        //Parent/Guardian education
+        $I->selectOption('input_108','Has GED/Diploma');
 
-       //fill date of last dentist visit
-       $I->fillField('input_38', '04/15/2009');
+        //Parent Work/school
+        $I->selectOption('input_117','Work 30+ hours a week');
+
+        //Housing Benefits
+        $I->selectOption('input_80.1','Housing/Rental Assistance');
+
+        //Available to transport
+        $I->selectOption('input_82','Yes');
+        $I->selectOption('input_83','No');//To a Bus stop?
+        
+        //Annual family income
+        $I->fillField('input_89','38,000');
+
+        //How did you hear about program
+        $I->fillField('input_90','Family friend');
+
+        //Submit button
+        $I->click('Submit');
     }
-
-    /* 
-    public function donationPageWorks(AcceptanceTester $I) {
-        $I->amOnPage('/donate'); //go to donate page
-        $I->amGoingTo('submit donation form with test values'); //comment to state intention
-
-        //fill donation text box
-        $I->fillField('//*[@id="give-amount-text"]','1000');
-        $I->click('//*[@id="give-form-101-1"]/button');
-
-        $I->fillField('//*[@id="give-first"]', 'Testing');
-        $I->fillField('//*[@id="give-last"]', 'Testing');
-        $I->fillField('//*[@id="give-email"]', 'Testing@test.com');
-
-        //Expect a failure for now
-        $I->see('Error: Please insert a valid donation amount.', "//*[@id='give_error_invalid_donation_amount']/p");
-
-    }
-    */
+    
 
     
 }
