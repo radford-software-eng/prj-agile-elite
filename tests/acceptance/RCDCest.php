@@ -8,13 +8,15 @@ class RCDCest
     //testing to see home page
     public function frontpageWorks(AcceptanceTester $I)
     {
+        
         $I->amOnPage('/'); //set current page to home page
 
-        $I->see('Home'); //check if 'Home' is on page
         $I->see('Who We Are'); //check to see if 'Who We Are' is on page
         $I->see('Our Partners');
         $I->see('Contact Us');
-        $I->see('Donate');
+        $I->see('Forms');
+        $I->see('Financial Assistance');
+        $I->see('Golf Tournament');
 
         //$I->see('65gsgfdsgfds'); //example of test fail
 
@@ -34,9 +36,9 @@ class RCDCest
         $I->seeCurrentUrlEquals('/contact-us'); //assert that url matches
         $I->amOnPage('/'); //return to home page
 
-        $I->click('//*[@id="menu-item-133"]/a'); //click 'donate' link
-        $I->seeCurrentUrlEquals('/donate'); //assert that url matches
-        $I->amOnPage('/'); //return to home page
+       /* $I->click('//*[@id="ast-desktop-header"]/div[1]/div/div/div/div[2]/div[2]/div/a[1]/div'); //click 'donate' link
+        $I->seeCurrentUrlEquals('/donate/'); //assert that url matches
+        $I->amOnPage('/'); //return to home page*/
 
         
 
@@ -125,13 +127,18 @@ class RCDCest
 
     public function formsPageWorks(AcceptanceTester $I){
         $I->amOnPage('/forms');
-        $I->amGoingTo('click the Mixed Delivery Grant Form Button');//State intention
 
-        //click Mixed Delivery Grant Form Button
-        $I->click('//*[@id="Delivery-Grant-FormButton"]');
+        //click financial Assistance Online Form
+        $I->amGoingTo('click the financial Assistance Online Button'); 
+        $I->click('//*[@id="post-2838"]/div/div/div/section/div/div/div/section[1]/div/div[1]/div/div/div/div/a');
+        
+        //click financial Assistance PDF Form button
+       // $I->click('//*[@id="post-2838"]/div/div/div/section/div/div/div/section[1]/div/div[2]/div/div/div/div/a');
+       
+       //click  Delivery Cover Letter PDF Button
+       // $I->amGoingTo('click the Delivery Cover Letter PDF button'); 
+        //$I->click('//*[@id="post-2838"]/div/div/div/section/div/div/div/section[2]/div/div[1]/div/div/div/div/a');
 
-        //click Mixed Delivery Cover Letter Button
-       // $I->click('//*[@id="Cover_Letter_Form_Button"]');
 
     }
     
