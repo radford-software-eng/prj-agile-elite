@@ -7,6 +7,8 @@ class BlogPageCest
     {
         //----------------//
         $I->amOnPage('/blog');
-        $I->see('Block');
+        $I->see('INTERACT WITH US!');
+        $I->click('//*[@id="post-3156"]/div/div/div/section/div/div/div/div[3]/div/div/a'); //click button
+        $I->amOnPage('/blog');
     }
 }

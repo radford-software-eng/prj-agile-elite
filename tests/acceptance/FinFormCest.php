@@ -391,14 +391,67 @@ class FinFormCest
             
             $I->click('//*[@id="gform_submit_button_3"]'); //Submit form
     
-            
-    
     
             //
             //$I->amOnPage('/financeassistformtest');
             $I->see('THERE WAS A PROBLEM WITH YOUR SUBMISSION');
     
         }
+
+
+            //testing if invalid phone is submitted
+    public function FinancialAssistPageTest5(AcceptanceTester $I) {
+        $I->amOnPage('/financeassistformtest'); //go to form preview page
+        $I->amGoingTo('submit financial assistance app form with test values'); //comment to state intention
+
+        //...............................................................................//
+        $I->amGoingTo('Submit childs information');
+        $I->fillField('//*[@id="input_3_1_3"]', 'Jim'); //Child's first name
+        $I->fillField('//*[@id="input_3_1_6"]', 'Doe'); //Child's last name
+        $I->fillField('//*[@id="input_3_2"]', '02/01/2014'); //Birthdate
+
+        $I->fillField('//*[@id="input_3_4"]', '111 Test Street, Radford, VA 22221'); //Physical address
+        //...............................................................................//
+
+        $I->amGoingTo('Submit 1st parent/guardian information');
+
+        $I->fillField('//*[@id="input_3_13_3"]', 'John'); //Parent's first name
+        $I->fillField('//*[@id="input_3_13_6"]', 'Doe'); //Parent's last name
+
+        $I->fillField('//*[@id="input_3_15"]', 'Father'); //Relationship to child
+        $I->fillField('//*[@id="input_3_16"]', '01/01/1980'); //Parent birthdate
+        $I->selectOption('#choice_3_17_0', 'Yes'); //Answer: Yes
+
+        $I->fillField('//*[@id="input_3_18"]', 'Someone'); //Employer
+        $I->fillField('//*[@id="input_3_19"]', '40'); //Hours worked per week
+        $I->fillField('//*[@id="input_3_20"]', '(1) 1-222'); //Work Phone number
+
+        $I->fillField('//*[@id="input_3_21"]', '(111) 122-2223'); //Home Phone number
+        $I->fillField('//*[@id="input_3_22"]', 'johndoe@mail.com'); //Email
+
+        //...............................................................................//
+
+
+        //...............................................................................//
+        
+
+        //...............................................................................//
+
+
+        //...............................................................................//
+
+
+        //...............................................................................//
+
+        
+        $I->click('//*[@id="gform_submit_button_3"]'); //Submit form
+
+
+        //
+        //$I->amOnPage('/financeassistformtest');
+        $I->see('THERE WAS A PROBLEM WITH YOUR SUBMISSION');
+
+    }
 
 
 
