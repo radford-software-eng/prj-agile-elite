@@ -19,7 +19,8 @@ class RCDCest
 
         //$I->see('65gsgfdsgfds'); //example of test fail
 
-        $I->seeElement('//*[@id="post-4"]/div/div/section[1]');
+        $I->seeElement('//*[@id="post-4"]/div/div/section[1]'); //see first pic
+        $I->seeElement('//*[@id="post-4"]/div/div/section[3]/div[2]'); //see second pic
 
         
         //testing page links
