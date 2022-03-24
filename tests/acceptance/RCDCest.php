@@ -8,9 +8,9 @@ class RCDCest
     //testing home page
     public function frontpageWorks(AcceptanceTester $I)
     {
-        $I->amOnPage('/'); //set current page to home page
+        $I->amOnPage(''); //set current page to home page
 
-        $I->see('Home'); //check if 'Home' is on page
+        $I->see('WELCOME TO RADFORD CHILD DEVELOPMENT!'); //check if 'Home' is on page
         $I->see('Who We Are'); //check to see if 'Who We Are' is on page
         $I->see('Our Partners');
         $I->see('Contact Us');
@@ -18,6 +18,8 @@ class RCDCest
         $I->see('Blog');
 
         //$I->see('65gsgfdsgfds'); //example of test fail
+
+        $I->seeElement('//*[@id="post-4"]/div/div/section[1]');
 
         
         //testing page links
@@ -34,9 +36,9 @@ class RCDCest
         $I->seeCurrentUrlEquals('/contact-us'); //assert that url matches
         $I->amOnPage('/'); //return to home page
 
-        $I->click('//*[@id="menu-item-3162"]/a'); //click 'blog' link
-        $I->seeCurrentUrlEquals('/blog'); //assert that url matches
-        $I->amOnPage('/'); //return to home page
+        //$I->click('//*[@id="menu-item-3162"]/a'); //click 'blog' link
+        //$I->seeCurrentUrlEquals('/blog'); //assert that url matches
+        //$I->amOnPage('/'); //return to home page
 
         $I->click('//*[@id="menu-item-2849"]/a'); //click 'forms' link
         $I->seeCurrentUrlEquals('/forms'); //assert that url matches
@@ -50,16 +52,4 @@ class RCDCest
 
     }
 
-    public function donationPageWorks(AcceptanceTester $I) {
-        $I->amOnPage('/donate'); //go to donate page
-        $I->amGoingTo('submit donation form with test values'); //comment to state intention
-
-        $I->fillField('//*[@id="give-first"]', 'Testing');
-        $I->fillField('//*[@id="give-last"]', 'Testing');
-        $I->fillField('//*[@id="give-email"]', 'Testing@test.com');
-
-        //Expect a failure for now
-        $I->see('Error: Please insert a valid donation amount.', "//*[@id='give_error_invalid_donation_amount']/p");
-
-    }
 }
