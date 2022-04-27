@@ -5,7 +5,7 @@ class WhoWeArePageCest
 {
     public function whoWeArePageWorks(AcceptanceTester $I){
         //going to 'who we are' page
-        $I->amOnPage('golf-tournament');
+        $I->amOnPage('swing_for_scholarships');
 
         $I->amGoingTo('Make sure every item in the page is clickable'); //comment to state intention
 

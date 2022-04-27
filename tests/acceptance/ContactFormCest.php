@@ -12,7 +12,7 @@ class ContactFormCest{
         $I->amOnPage('/contact-us'); //go to contact-us page
 
         $I->amGoingTo('submit "contact us" form with test values'); //comment to state intention
-
+        $I->seeElement('//*[@id="post-8"]/div/div/section[1]');
 
         //Test: Fill out all fields with valid values
         //-----------------------------------------------------------------------//
@@ -53,6 +53,5 @@ class ContactFormCest{
 
 
 }
-
 
 ?>

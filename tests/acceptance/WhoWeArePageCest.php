@@ -1,6 +1,6 @@
 <?php
 
-//to run: php vendor/bin/codecept run tests/acceptance/BlogPageCest.php --steps
+//to run: php vendor/bin/codecept run tests/acceptance/WhoWeArePageCest.php --steps
 class WhoWeArePageCest
 {
     public function whoWeArePageWorks(AcceptanceTester $I){
